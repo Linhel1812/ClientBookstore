@@ -1,0 +1,24 @@
+<p>book-list works!</p>
+
+<div class= "ui middle aligned selection divided list">
+    <a *ngFor= "let book of books" class="item bs-book-list-item"
+       [book]="book" [routerLink]="book.isbn">
+          <!--img class= "ui tiny image"
+              *ngIf= " book.images"
+              [src]= " book.images[0].url">
+         <div class= "content">
+             <div class= "header" >{{ book.title }}</div>
+             <div class= "description" > {{ book.subtitle }} </div>
+             <div class= "metadata">
+     <span *ngFor= "let author of book.authors; last as l">
+       {{ author.firstName }} {{ author.lastName }}<span *ngIf= "!l" >,</span>
+     </span>
+             </div>
+             <div class= "extra">ISBN {{ book.isbn }}</div >
+         </div-->
+    </a>
+    <div *ngIf="!books" class="ui active dimmer">
+        <div class="ui large text loader">Daten werden geladen ....</div>
+    </div>
+    <p *ngIf="books && !books.length">Es wurden noch keine Bücher eingetragen</p>
+</div>
